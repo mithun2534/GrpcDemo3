@@ -8,7 +8,8 @@ package greet;
 service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply);
-  rpc SayHello2(TestSvc) returns (HelloReply);
+  rpc SayHello2(TestSvc) returns (HelloReply); 
+  rpc service1(Customer) returns(HelloReply);
 }
 
 // The request message containing the user's name.
@@ -23,4 +24,9 @@ message HelloReply {
 
 message TestSvc{
 	string id=1;
+}
+
+message Customer {
+	string FirstName=1;
+	string LastName=2;
 }

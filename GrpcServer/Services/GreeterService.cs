@@ -32,6 +32,13 @@ namespace GrpcServer
             });
         }
 
+        public override Task<HelloReply> service1(Customer obj, ServerCallContext context)
+        {
+            return Task.FromResult(new HelloReply
+            {
+                Message = "Service1 - Hello  " + obj.FirstName
+            });
+        }
 
     }
 }
